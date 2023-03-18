@@ -115,19 +115,19 @@ procedure(pulse_program,dir,mode)
    # ======= CNOT =======
    
    # === Rz pi/2 1H and Rz -pi/2 13C ===
-   # Rx -pi/2 on both 
-   pulse(1,a90HC,p4,freq1H,2,a90C,p4,freq13C,d90C)
+   pulse(1,a90H,p4,d90H)
+   delay(0.25)
+   pulse(1,a90H,p3,d90H)
+   delay(0.25)
+   pulse(1,a90H,p2,d90H)
 
    delay(0.25)
 
-   # Ry in our theta direction (pi/2 for 1H, -pi/2 for 13C)
-   pulse(1,a90HC,p1,freq1H,2,a90C,p3,freq13C,d90C)
-
+   pulse(2,a90C,p4,d90C)
    delay(0.25)
-
-   # Rx +pi/2 on both 
-   pulse(1,a90HC,p2,freq1H,2,a90C,p2,freq13C,d90C)
-   
+   pulse(2,a90C,p1,d90C)
+   delay(0.25)
+   pulse(2,a90C,p2,d90C)
    delay(0.25)
 
    # === identity 1H and Rx pi/2 13C ===

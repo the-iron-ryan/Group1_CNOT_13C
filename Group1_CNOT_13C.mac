@@ -94,7 +94,7 @@ procedure(getseqpar)
           "totPnts       = nrPnts",
           "totTime       = acqTime"]
    var = [""]
-   pp_list = ["n1","a90HC","freq1H","p4","a90C","freq13C","d90C","p1","p3","p2","dEvolution","dAcq"]
+   pp_list = ["n1","a90H","p4","d90H","p3","p2","a90C","d90C","p1","dEvolution","dAcq"]
    pp_name = "Group1_CNOT_13C.p"
    phase_list = [1,3,1,3;0,2,0,2;3,1,3,1;2,0,2,0;0,2,0,2]
 
