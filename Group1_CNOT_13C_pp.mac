@@ -60,6 +60,7 @@ procedure(pulse_program,dir,mode)
    cleardata(n1)
 
    pVal = "P0"
+   startState = "01"
 
    # ======= P0 =======
    if pVal == "P0"
@@ -107,6 +108,34 @@ procedure(pulse_program,dir,mode)
       pulse(1,a90HC,p1,freq1H,2,a90C,p3,freq13C,d90C)
       delay(0.25)
       pulse(1,a90HC,p3,freq1H,2,a90C,p1,freq13C,d90C)
+   endif
+   
+   # Delay before applying start state
+   delay(0.25)
+
+   if startState == "00"
+      print("Running state 00")
+   elseif startState == "01"
+      print("Running state 01")
+      pulse(2, a90C, p1, d90C)
+      delay(0.25)
+      pulse(2, a90C, p1, d90C)
+   elseif startState == "10"
+      print("Running state 10")
+      pulse(1, a90H, p1, d90H)
+      delay(0.25)
+      pulse(1, a90H, p1, d90H)
+   elseif startState == "11"
+      print("Running state 11")
+      pulse(2, a90C, p1, d90C)    
+      delay(0.25)
+      pulse(2, a90C, p1, d90C)
+
+      delay(0.25)
+
+      pulse(1, a90H, p1, d90H)
+      delay(0.25)
+      pulse(1, a90H, p1, d90H)
    endif
 
    # Ending delay before CNOT
