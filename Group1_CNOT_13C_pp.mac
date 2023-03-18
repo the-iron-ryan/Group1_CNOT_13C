@@ -59,7 +59,7 @@ procedure(pulse_program,dir,mode)
 
    cleardata(n1)
 
-   pVal = "P2"
+   pVal = "P0"
 
    # ======= P0 =======
    if pVal == "P0"
