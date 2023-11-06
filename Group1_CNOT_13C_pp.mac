@@ -59,15 +59,15 @@ procedure(pulse_program,dir,mode)
 
    cleardata(n1)
 
-   pVal = "P0"
-   startState = "01"
+   pVal = "P2"
+   startState = "11"
 
    # ======= P0 =======
    if pVal == "P0"
-      print("Running with P0")
+      print("Running with P0\n")
    # ======= P1 =======
    elseif pVal == "P1"
-      print("Running with P1")
+      print("Running with P1\n")
 
       # 90y-H pulse
       pulse(1,a90HC,p1,d90C)  
@@ -85,7 +85,7 @@ procedure(pulse_program,dir,mode)
       pulse(2,a90C,p2,d90C)  
    # ======= P2 =======
    elseif pVal == "P2"
-      print("Running with P2")
+      print("Running with P2\n")
 
       #  90y-C pulse
       pulse(2,a90C,p1,d90C) 
@@ -114,28 +114,28 @@ procedure(pulse_program,dir,mode)
    delay(0.25)
 
    if startState == "00"
-      print("Running state 00")
+      print("Running state 00\n")
    elseif startState == "01"
-      print("Running state 01")
-      pulse(2, a90C, p1, d90C)
+      print("Running state 01\n")
+      pulse(2, a90C, p2, d90C)
       delay(0.25)
-      pulse(2, a90C, p1, d90C)
+      pulse(2, a90C, p2, d90C)
    elseif startState == "10"
-      print("Running state 10")
-      pulse(1, a90H, p1, d90H)
+      print("Running state 10\n")
+      pulse(1, a90H, p2, d90H)
       delay(0.25)
-      pulse(1, a90H, p1, d90H)
+      pulse(1, a90H, p2, d90H)
    elseif startState == "11"
-      print("Running state 11")
-      pulse(2, a90C, p1, d90C)    
+      print("Running state 11\n")
+      pulse(2, a90C, p2, d90C)    
       delay(0.25)
-      pulse(2, a90C, p1, d90C)
+      pulse(2, a90C, p2, d90C)
 
       delay(0.25)
 
-      pulse(1, a90H, p1, d90H)
+      pulse(1, a90H, p2, d90H)
       delay(0.25)
-      pulse(1, a90H, p1, d90H)
+      pulse(1, a90H, p2, d90H)
    endif
 
    # Ending delay before CNOT

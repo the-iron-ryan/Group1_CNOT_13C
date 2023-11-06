@@ -1,4 +1,6 @@
 90AmplitudeHC = "factory"
+startState="00"
+pState="P0"
 90Amplitude13C = "factory"
 accumulate = "yes"
 b1Freq1H = "common"
